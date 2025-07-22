@@ -17,3 +17,22 @@ button {
   background-color: #ff0055;
   color: white;
 }
+#rainEffect {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.raindrop {
+  position: absolute;
+  background: rgba(173,216,230,0.6);
+  width: 2px; height: 20px;
+  border-radius: 1px;
+  animation: fall 1s linear infinite;
+}
+
+@keyframes fall {
+  to { transform: translateY(100vh); }
+}
