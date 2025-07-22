@@ -20,11 +20,11 @@ async function getWeather() {
     // --- WEATHER ICON CODE ---
     const condition = currentData.weather[0].main;
     let iconSrc = "";
-    if (condition === "Rain") iconSrc = "assets/icons/rain.png";
-    else if (condition === "Clear") iconSrc = "assets/icons/sun.png";
-    else if (condition === "Clouds") iconSrc = "assets/icons/cloud.png";
-    else if (condition === "Snow") iconSrc = "assets/icons/snow.png";
-    else if (condition === "Mist") iconSrc = "assets/icons/mist.png";
+    if (condition === "Rain") iconSrc = "assets1/icons/rain.png";
+else if (condition === "Clear") iconSrc = "assets1/icons/sun.png";
+else if (condition === "Clouds") iconSrc = "assets1/icons/cloud.png";
+else if (condition === "Snow") iconSrc = "assets1/icons/snow.png";
+else if (condition === "Mist") iconSrc = "assets1/icons/mist.png";
 
     const iconImg = document.getElementById("weatherIcon");
     iconImg.src = iconSrc;
