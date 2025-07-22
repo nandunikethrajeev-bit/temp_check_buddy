@@ -48,7 +48,7 @@ async function getWeather() {
     });
 
     // Render forecast
-    let forecastHtml = "<h2>5-Day Forecast</h2><div style='display:flex; justify-content:center; gap:16px;'>";
+    let forecastHtml = "<h2>5-Day Forecast</h2><div class='forecast-row'>";
     Object.keys(daily).slice(0,5).forEach(date => {
       const f = daily[date];
       const fCondition = f.weather[0].main;
@@ -59,11 +59,11 @@ async function getWeather() {
       else if (fCondition === "Snow") fIcon = "assets1/icons/snow.png";
       else if (fCondition === "Mist") fIcon = "assets1/icons/mist.png";
       forecastHtml += `
-        <div style="text-align:center;">
-          <div>${date}</div>
-          <img src="${fIcon}" alt="${fCondition}" style="width:48px; height:48px;">
-          <div>${f.main.temp}°C</div>
-          <div>${fCondition}</div>
+        <div class="forecast-day">
+          <div class="date">${date}</div>
+          <img src="${fIcon}" alt="${fCondition}">
+          <div class="temp">${f.main.temp}°C</div>
+          <div class="desc">${fCondition}</div>
         </div>
       `;
     });
