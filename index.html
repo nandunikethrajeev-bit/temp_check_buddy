@@ -3,18 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <title>Temp-Check Buddy</title>
-  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1 class="city">Bengaluru</h1>
-<p class="temp">--°C</p>
-<img id="weatherIcon" src="" alt="Weather Icon" style="width:80px;display:none;">
-<p class="condition">Loading...</p>
-<input type="text" id="cityInput" placeholder="Enter city" />
-<button onclick="getWeather()">Check Weather</button>
-<div class="forecast"></div>
-<div id="rainEffect" style="display:none;"></div>
-
+  <div class="card">
+    <h1 class="city">Bengaluru</h1>
+    <p class="temp">--°C</p>
+    <img id="weatherIcon" src="" alt="Weather Icon" style="display:none;">
+    <p class="condition">Loading...</p>
+    <div style="margin-bottom:18px;">
+      <input type="text" id="cityInput" placeholder="Enter city" />
+      <button onclick="getWeather()">Check Weather</button>
+    </div>
+    <div class="forecast"></div>
+  </div>
+  <div id="rainEffect" style="display:none;"></div>
   <script src="script.js"></script>
 </body>
 </html>
