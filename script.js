@@ -1,6 +1,6 @@
 async function getWeather() {
   const city = document.getElementById("cityInput").value || "Bengaluru";
-  const apiKey = "3ed6dd4f7f702dab95a5a7cd72c2bf13; //
+  const apiKey = "3ed6dd4f7f702dab95a5a7cd72c2bf13";
   const currentURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   const forecastURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
 
