@@ -16,9 +16,41 @@ async function getWeather() {
   document.querySelector(".temp").textContent = `${currentData.main.temp}°C`;
   document.querySelector(".condition").textContent = currentData.weather[0].main;
 
-  // Sound effect logic
-  const audio = new Audio();
+  // Weather ICON logic (ADD THIS BLOCK)
   const condition = currentData.weather[0].main;
+  let iconSrc = "";
+  if (condition === "Rain") iconSrc = "assets/icons/rain.png";
+  else if (condition === "Clear") iconSrc = "assets/icons/sun.png";
+  else if (condition === "Clouds") iconSrc = "assets/icons/cloud.png";
+  else if (condition === "Snow") iconSrc = "assets/icons/snow.png";
+  else if (condition === "Mist") iconSrc = "assets/icons/mist.png";
+  const iconImg = document.getElementById("weatherIcon");
+  iconImg.src = iconSrc;
+  iconImg.style.display = iconSrc ? "inline-block" : "none";
+
+  // Rain Effect logic (ADD THESE FUNCTIONS ABOVE OR BELOW getWeather)
+  function showRainEffect() {
+    const rainEffect = document.getElementById("rainEffect");
+    rainEffect.innerHTML = "";
+    for(let i=0; i<100; i++) {
+      const drop = document.createElement('div');
+      drop.classList.add('raindrop');
+      drop.style.left = Math.random()*100 + "vw";
+      drop.style.animationDuration = (0.7+Math.random()*0.5) + "s";
+      rainEffect.appendChild(drop);
+    }
+    rainEffect.style.display = "block";
+  }
+  function hideRainEffect() {
+    document.getElementById("rainEffect").style.display = "none";
+  }
+
+  // Call Rain Effect based on condition (right after icon logic)
+  if (condition === "Rain") showRainEffect();
+  else hideRainEffect();
+
+  // Sound effect logic (keep as is, or move after condition)
+  const audio = new Audio();
   if (condition === "Rain") audio.src = "rain.mp3";
   else if (condition === "Clear") audio.src = "sunny.mp3";
   audio.loop = true;
@@ -41,3 +73,7 @@ async function getWeather() {
     forecastDiv.appendChild(card);
   }
 }
+
+// ---- Place these functions OUTSIDE getWeather() if you want ----
+// function showRainEffect() { ... }
+// function hideRainEffect() { ... }
