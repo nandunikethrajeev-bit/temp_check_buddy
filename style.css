@@ -1,38 +1,139 @@
 body {
-  background-color: #121212;
-  color: white;
-  font-family: 'Orbitron', sans-serif;
-  text-align: center;
-  padding: 30px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+  margin: 0;
+  min-height: 100vh;
 }
 
-input, button {
-  padding: 10px;
-  margin-top: 15px;
+.card {
+  background: white;
+  max-width: 400px;
+  margin: 40px auto 0 auto;
+  padding: 32px 24px;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(120,160,200,0.18);
+  text-align: center;
+}
+
+.city {
+  font-size: 2.2em;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #3090ff;
+}
+
+.temp {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #333;
+}
+
+.condition {
+  font-size: 1.2em;
+  margin-bottom: 18px;
+  color: #555;
+}
+
+input {
+  padding: 8px;
+  font-size: 1.1em;
+  margin-right: 8px;
   border-radius: 6px;
-  font-size: 16px;
+  border: 1px solid #b3d1f3;
+  outline: none;
 }
 
 button {
-  background-color: #ff0055;
+  padding: 8px 16px;
+  font-size: 1.1em;
+  border-radius: 6px;
+  border: none;
+  background: #3090ff;
   color: white;
+  cursor: pointer;
+  transition: background 0.2s;
 }
+button:hover {
+  background: #1769aa;
+}
+
+.forecast {
+  margin-top: 24px;
+}
+
+.forecast h2 {
+  font-size: 1.4em;
+  color: #3090ff;
+  margin-bottom: 18px;
+}
+
+.forecast-row {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.forecast-day {
+  background: #f6f9fe;
+  border-radius: 12px;
+  padding: 14px 10px;
+  width: 110px;
+  box-shadow: 0 2px 8px rgba(120,160,200,0.08);
+  text-align: center;
+  transition: transform 0.15s;
+}
+.forecast-day:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 18px rgba(120,160,200,0.12);
+}
+
+.forecast-day img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 8px;
+}
+
+.forecast-day .date {
+  font-size: 0.98em;
+  color: #444;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.forecast-day .temp {
+  font-size: 1.2em;
+  color: #3090ff;
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+
+.forecast-day .desc {
+  font-size: 1em;
+  color: #222;
+}
+
 #rainEffect {
   position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
+  top: 0; left: 0; right: 0; bottom: 0;
   pointer-events: none;
-  z-index: 100;
+  z-index: 99;
 }
-
 .raindrop {
   position: absolute;
-  background: rgba(173,216,230,0.6);
-  width: 2px; height: 20px;
-  border-radius: 1px;
-  animation: fall 1s linear infinite;
+  top: -20px;
+  width: 2px;
+  height: 18px;
+  background: #3090ff;
+  opacity: 0.5;
+  border-radius: 2px;
+  animation-name: rain-fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
-
-@keyframes fall {
-  to { transform: translateY(100vh); }
+@keyframes rain-fall {
+  0% { top: -20px; opacity: 0.7; }
+  70% { opacity: 0.5; }
+  100% { top: 100vh; opacity: 0; }
 }
