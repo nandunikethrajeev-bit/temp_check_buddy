@@ -1,4 +1,4 @@
-const apiKey = "3ed6dd4f7f702dab95a5a7cd72c2bf13"; // <-- Replace with your actual API key
+const apiKey = "3ed6dd4f7f702dab95a5a7cd72c2bf13"; // <-- Your API key
 
 async function getWeather() {
   const city = document.getElementById("cityInput").value || "Bengaluru";
@@ -21,10 +21,10 @@ async function getWeather() {
     const condition = currentData.weather[0].main;
     let iconSrc = "";
     if (condition === "Rain") iconSrc = "assets1/icons/rain.png";
-else if (condition === "Clear") iconSrc = "assets1/icons/sun.png";
-else if (condition === "Clouds") iconSrc = "assets1/icons/cloud.png";
-else if (condition === "Snow") iconSrc = "assets1/icons/snow.png";
-else if (condition === "Mist") iconSrc = "assets1/icons/mist.png";
+    else if (condition === "Clear") iconSrc = "assets1/icons/sun.png";
+    else if (condition === "Clouds") iconSrc = "assets1/icons/cloud.png";
+    else if (condition === "Snow") iconSrc = "assets1/icons/snow.png";
+    else if (condition === "Mist") iconSrc = "assets1/icons/mist.png";
 
     const iconImg = document.getElementById("weatherIcon");
     iconImg.src = iconSrc;
@@ -53,11 +53,11 @@ else if (condition === "Mist") iconSrc = "assets1/icons/mist.png";
       const f = daily[date];
       const fCondition = f.weather[0].main;
       let fIcon = "";
-      if (fCondition === "Rain") fIcon = "assets/icons/rain.png";
-      else if (fCondition === "Clear") fIcon = "assets/icons/sun.png";
-      else if (fCondition === "Clouds") fIcon = "assets/icons/cloud.png";
-      else if (fCondition === "Snow") fIcon = "assets/icons/snow.png";
-      else if (fCondition === "Mist") fIcon = "assets/icons/mist.png";
+      if (fCondition === "Rain") fIcon = "assets1/icons/rain.png";
+      else if (fCondition === "Clear") fIcon = "assets1/icons/sun.png";
+      else if (fCondition === "Clouds") fIcon = "assets1/icons/cloud.png";
+      else if (fCondition === "Snow") fIcon = "assets1/icons/snow.png";
+      else if (fCondition === "Mist") fIcon = "assets1/icons/mist.png";
       forecastHtml += `
         <div style="text-align:center;">
           <div>${date}</div>
@@ -96,9 +96,5 @@ function hideRainEffect() {
   document.getElementById("rainEffect").style.display = "none";
 }
 
-window.onload = getWeather;
-  document.getElementById("rainEffect").style.display = "none";
-}
-
-// Optional: Run weather check on load for Bengaluru
+// Run weather check on load for Bengaluru
 window.onload = getWeather;
