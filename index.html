@@ -7,11 +7,13 @@
 </head>
 <body>
   <h1 class="city">Bengaluru</h1>
-  <p class="temp">--°C</p>
-  <p class="condition">Loading...</p>
-  <input type="text" id="cityInput" placeholder="Enter city" />
-  <button onclick="getWeather()">Check Weather</button>
-  <div class="forecast"></div>
+<p class="temp">--°C</p>
+<img id="weatherIcon" src="" alt="Weather Icon" style="width:80px;display:none;">
+<p class="condition">Loading...</p>
+<input type="text" id="cityInput" placeholder="Enter city" />
+<button onclick="getWeather()">Check Weather</button>
+<div class="forecast"></div>
+<div id="rainEffect" style="display:none;"></div>
 
   <script src="script.js"></script>
 </body>
